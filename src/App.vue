@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <HeaderView />
-    <IndexView />
+    <router-view />
     <FooterView />
   </div>
   <!-- <router-view /> -->
@@ -9,13 +9,11 @@
 
 <script>
 import HeaderView from "@/components/HeaderView.vue";
-import IndexView from "@/components/IndexView.vue";
 import FooterView from "@/components/FooterView.vue";
 
 export default {
   components: {
     HeaderView,
-    IndexView,
     FooterView,
   },
   setup() {
@@ -26,8 +24,8 @@ export default {
 
 <style>
 @charset 'utf-8';
-@import url("@/assets/css/notosanskr/NotoSansKR.css");
 @import url('@/assets/css/reset.css');
+@import url("@/assets/css/notosanskr/NotoSansKR.css");
 
 * {
   margin: 0;
