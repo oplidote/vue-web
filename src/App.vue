@@ -1,26 +1,80 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="wrap">
+    <HeaderView />
+    <IndexView />
+    <FooterView />
+  </div>
+  <!-- <router-view /> -->
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HeaderView from "@/components/HeaderView.vue";
+import IndexView from "@/components/IndexView.vue";
+import FooterView from "@/components/FooterView.vue";
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    HeaderView,
+    IndexView,
+    FooterView,
+  },
+  setup() {
+    return {};
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@charset 'utf-8';
+@import url("@/assets/css/notosanskr/NotoSansKR.css");
+@import url('@/assets/css/reset.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline-style: none; */
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+html {
+  font-size: 16px;
+  overflow-x: hidden;
+}
+body {
+  font-family: "Noto Sans KR";
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 1.15;
+  letter-spacing: 0px;
+  color: #444;
+  word-break: break-all;
+}
+
+/* 공통 요소 */
+.container {
+  position: relative;
+  display: block;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.wrap {
+  position: relative;
+  display: block;
+  min-width: 1200px;
 }
 </style>
