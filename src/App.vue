@@ -1,4 +1,5 @@
 <template>
+    <ModalView v-if="modal_active" @close-modal="hideModal"/>
   <div class="wrap">
     <HeaderView />
     <router-view />
@@ -10,14 +11,24 @@
 <script>
 import HeaderView from "@/components/HeaderView.vue";
 import FooterView from "@/components/FooterView.vue";
+import ModalView from "@/components/ModalView.vue";
+import { ref } from 'vue';
 
 export default {
   components: {
+    ModalView,
     HeaderView,
     FooterView,
   },
   setup() {
-    return {};
+    const modal_active = ref(true);
+    const hideModal = () => {
+      modal_active.value = false
+    }
+    return {
+      modal_active,
+      hideModal,
+    };
   },
 };
 </script>
@@ -53,7 +64,7 @@ html {
   overflow-x: hidden;
 }
 body {
-  font-family: "Noto Sans KR";
+  font-family: "Noto Sans KR" sans-serif;
   font-size: 1rem;
   font-weight: 200;
   line-height: 1.15;
