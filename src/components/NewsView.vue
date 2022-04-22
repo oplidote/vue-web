@@ -4,56 +4,25 @@
         <div class="news-board">
           <h3 class="news-title">공지사항</h3>
           <ul class="news-board-list">
-            <li>
-              <a href="#">
-                <span class="news-board-txt"
-                  >STX건설주식회사 M&A 관련 기본사항 안내</span
-                >
-                <span class="news-board-more"></span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="news-board-txt"
-                  >회생회사 STX건설주식회사 M&A 공고</span
-                >
-                <span class="news-board-more"></span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="news-board-txt">2021년도 협력업체 모집공고</span>
-                <span class="news-board-more"></span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="news-board-txt">STX건설 상호 사용 관련 안내</span>
-                <span class="news-board-more"></span>
-              </a>
-            </li>
+              <li v-for="item in notice_arr" :key="item.id">
+                  <a :href="item.link">
+                      <span class="news-board-txt">{{ item.title }}</span>
+                      <span class="news-board-more"></span>
+                  </a>
+              </li>
           </ul>
         </div>
 
         <div class="news-board">
           <h3 class="news-title">보도자료</h3>
           <ul class="news-board-list">
-            <li>
-              <a href="#">
-                <span class="news-board-txt"
-                  >STX건설, 춘천 레고랜드 테마파크 시공사 ‘선정’</span
-                >
+            <li v-for="item in news_arr" :key="item.id">
+              <a :href="item.link">
+                <span class="news-board-txt">{{ item.title }}</span>
                 <span class="news-board-more"></span>
               </a>
             </li>
-            <li>
-              <a href="#">
-                <span class="news-board-txt"
-                  >STX건설, 2018년 성장 '청신호'</span
-                >
-                <span class="news-board-more"></span>
-              </a>
-            </li>
+            
           </ul>
         </div>
       </div>
@@ -61,8 +30,26 @@
 </template>
 
 <script>
+import { useStore } from 'vuex'
+import {ref} from 'vue'
 export default {
-
+  setup() {
+    // 공지사항 목록 배열
+    const notice_arr = ref([]);
+    // vuex 의 state 접근
+    const store = useStore();
+    // 필요로 한 데이터 가져오기
+    notice_arr.value = store.state.notice.notice;
+    // 보도자료 목록 배열
+    const news_arr = ref([]);
+    news_arr.value = store.state.news.news;
+    
+    
+    return{
+      notice_arr,
+      news_arr,
+    }
+  }
 }
 </script>
 

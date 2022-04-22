@@ -1,5 +1,9 @@
 <template>
-  <header class="header">
+  <header
+    class="header"
+    :class="[gnb_active ? 'header_active' : '']"
+    ref="ref_header"
+  >
     <div class="container">
       <a href="index.html" title="STX 건설" class="logo">
         <img :src="require('@/assets/images/logo.png')" alt="STX 건설" />
@@ -19,32 +23,34 @@
 
     <nav class="nav">
       <div class="container">
-        <ul class="gnb"></ul>
+        <ul
+          class="gnb"
+          ref="ref_gnb"
+          @mouseenter="overFn"
+          @mouseleave="LeaveFn"
+          v-html="menu_html"
+        ></ul>
       </div>
     </nav>
   </header>
 </template>
 
 <script>
-import $ from "jquery";
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 export default {
   setup() {
+    const ref_header = ref(null);
+    const ref_gnb = ref(null);
+    const gnb_active = ref(false);
+    const overFn = () => {
+      gnb_active.value = true;
+    };
+    const leaveFn = () => {
+      gnb_active.value - false;
+    };
+    // 동적 메뉴 html 보관
+    const menu_html = ref("");
     onMounted(() => {
-      // gnb 기능
-      // 1. gnb 를 저장한다.
-      let gnb = $(".gnb");
-      // 2. header 를 저장한다.
-      let header = $(".header");
-      // 3. gnb 에 마우스 오버를 하면 .header 가 늘어난다.
-      gnb.mouseenter(function () {
-        header.addClass("header-active");
-      });
-      // 4. gnb 에 마우스 아웃을 하면 .header 가 줄어든다.
-      gnb.mouseleave(function () {
-        header.removeClass("header-active");
-      });
-
       // 메뉴를 작성하는 코드
       // 1. 메뉴를 위한 사용자 객체 생성자 함수
       function MakeMenu(_mainmenu, _mainlink, _submenu, _sublink) {
@@ -82,7 +88,6 @@ export default {
         new MakeMenu("고객지원", "#", "자주묻는질문, 고객문의", "#,#"),
         new MakeMenu("채용정보", "#", "채용안내, 채용공고, 채용FAQ", "#,#,#"),
       ];
-
       // 2. 총 메뉴의 개수를 저장한다.
       let menu_total = menu_data.length;
 
@@ -90,60 +95,36 @@ export default {
       let menu_li = "";
 
       for (let i = 0; i < menu_total; i++) {
-        menu_li = menu_li + "<li></li>";
-      }
-
-      gnb.html(menu_li);
-
-      // 4. .gnb > li 를 찾아서 저장한다.
-      let menu_lis = gnb.find(">li");
-      // console.log(menu_lis);
-
-      // 5. 주메뉴를 출력하자.
-      $.each(menu_lis, function (index) {
-        // console.log(index);
-        // console.log(item);
-        let temp = menu_data[index];
-
-        let cate = "<a href=";
-        cate = cate + temp.mainlink;
-        cate = cate + ">";
-
-        cate = cate + temp.mainmenu;
-        cate = cate + "</a>";
-
-        cate = cate + "<ul class=submenu>";
-        // submenu 의 li 를 만든다.
-        // 서브메뉴 글자들에게서 , 를 기준으로 분리한다.
+        // Menu
+        menu_li += "<li>";
+        let temp = menu_data[i];
+        let cate = `<a href="${temp.mainlink}">${temp.mainmenu}</a>`;
+        // Submenu
+        cate += `<ul class="submenu">`;
+        // Submenu - category
         let temp_sub = temp.submenu.split(",");
-        // console.log(temp_sub);
-
-        // 서브메뉴 링크들을 , 를 기준으로 분리한다.
-        // let temp_sub_link = ('#,#,#,#,#,#').split(',');
         let temp_sub_link = temp.sublink.split(",");
-        // console.log(temp_sub_link);
-
-        // 최종 li 문구를 저장한다.
         let temp_sub_lis = "";
 
-        for (let i = 0; i < temp_sub.length; i++) {
-          temp_sub_lis = temp_sub_lis + "<li>";
-
-          temp_sub_lis = temp_sub_lis + "<a href=";
-          temp_sub_lis = temp_sub_lis + temp_sub_link[i];
-          temp_sub_lis = temp_sub_lis + ">";
-
-          temp_sub_lis = temp_sub_lis + temp_sub[i];
-          temp_sub_lis = temp_sub_lis + "</a>";
-          temp_sub_lis = temp_sub_lis + "</li>";
+        for (let j = 0; j < temp_sub.length; j++) {
+          temp_sub_lis += `<li><a href="${temp_sub_link[j]}">${temp_sub[j]}</a></li>`;
         }
-        cate = cate + temp_sub_lis;
-        cate = cate + "</ul>";
-
-        $(this).html(cate);
-      });
+        cate += temp_sub_lis;
+        cate += `</ul>`;
+        menu_li += cate;
+        menu_li += "</li>";
+      }
+      menu_html.value = menu_li;
+      console.log(menu_li);
     });
-    return {};
+    return {
+      ref_header,
+      ref_gnb,
+      gnb_active,
+      overFn,
+      leaveFn,
+      menu_html,
+    };
   },
 };
 </script>
