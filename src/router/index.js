@@ -11,32 +11,32 @@ const router = createRouter({
         {
             path: '/stx-vue/company',
             name: 'Company',
-            component: ''
+            component: HomeIndex
         }, 
         {
             path: '/stx-vue/business',
             name: 'Business',
-            component: ''
+            component: HomeIndex
         }, 
         {
             path: '/stx-vue/contribution',
             name: 'Cb',
-            component: ''
+            component: HomeIndex
         }, 
         {
             path: '/stx-vue/ad',
             name: 'AD',
-            component: ''
+            component: HomeIndex
         }, 
         {
             path: '/stx-vue/cs',
             name: 'CS',
-            component: ''
+            component: HomeIndex
         }, 
         {
             path: '/stx-vue/job',
             name: 'Job',
-            component: ''
+            component: HomeIndex
         } 
     ]
 });
