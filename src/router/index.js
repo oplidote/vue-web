@@ -4,39 +4,39 @@ const router = createRouter({
     history: createWebHistory(),
     routes: [ 
         {
-            path: '/',
+            path: '/stx-vue/',
             name: 'Home',
             component: HomeIndex
         }, 
         {
-            path: '/company',
+            path: '/stx-vue/company',
             name: 'Company',
-            component: ''
+            component: HomeIndex
         }, 
         {
-            path: '/business',
+            path: '/stx-vue/business',
             name: 'Business',
-            component: ''
+            component: HomeIndex
         }, 
         {
-            path: '/contribution',
+            path: '/stx-vue/contribution',
             name: 'Cb',
-            component: ''
+            component: HomeIndex
         }, 
         {
-            path: '/ad',
+            path: '/stx-vue/ad',
             name: 'AD',
-            component: ''
+            component: HomeIndex
         }, 
         {
-            path: '/cs',
+            path: '/stx-vue/cs',
             name: 'CS',
-            component: ''
+            component: HomeIndex
         }, 
         {
-            path: '/job',
+            path: '/stx-vue/job',
             name: 'Job',
-            component: ''
+            component: HomeIndex
         } 
     ]
 });
