@@ -1,71 +1,51 @@
 <template>
-   <section class="part">
-            <div class="container">
-                <div class="part-top">
-                    <h2 class="part-title">
-                        STX Engineering & Construction Business
-                    </h2>
-                    <p class="part-txt">
-                        STX건설은 건문 역량 강화를 통해 건축, 주택, 토목, 플랜트 사업 영역에서 <br>
-                        탁월한 성과를 인정받은 기업으로 자연과 기술의 공간에 인류의 가치를 추구합니다.
-                    </p>
-                </div>
-                <div class="part-bottom">
-                    <ul class="part-list">
-                        <li>
-                            <a href="#">
-                                <span class="part-list-img">
-                                    그림넣는 자리
-                                </span>
-                                <span class="part-list-txt">
-                                    건축사업
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="part-list-img">
-                                    그림넣는 자리
-                                </span>
-                                <span class="part-list-txt">
-                                    주택사업
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="part-list-img">
-                                    그림넣는 자리
-                                </span>
-                                <span class="part-list-txt">
-                                    토목사업
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="part-list-img">
-                                    그림넣는 자리
-                                </span>
-                                <span class="part-list-txt">
-                                    플랜트/공작기계사업
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="part-list-img">
-                                    그림넣는 자리
-                                </span>
-                                <span class="part-list-txt">
-                                    해외사업
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+  <section class="part">
+      <div class="container">
+        <div class="part-top">
+          <h2 class="part-title">STX Engineering & Construction Business</h2>
+          <p class="part-txt">
+            STX건설은 건문 역량 강화를 통해 건축, 주택, 토목, 플랜트 사업
+            영역에서 <br />
+            탁월한 성과를 인정받은 기업으로 자연과 기술의 공간에 인류의 가치를
+            추구합니다.
+          </p>
+        </div>
+        <div class="part-bottom">
+          <ul class="part-list">
+            <li>
+              <a href="#">
+                <span class="part-list-img"> 그림넣는 자리 </span>
+                <span class="part-list-txt"> 건축사업 </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="part-list-img"> 그림넣는 자리 </span>
+                <span class="part-list-txt"> 주택사업 </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="part-list-img"> 그림넣는 자리 </span>
+                <span class="part-list-txt"> 토목사업 </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="part-list-img"> 그림넣는 자리 </span>
+                <span class="part-list-txt"> 플랜트/공작기계사업 </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="part-list-img"> 그림넣는 자리 </span>
+                <span class="part-list-txt"> 해외사업 </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 </template>
 
 <script>
@@ -74,9 +54,7 @@ export default {
 }
 </script>
 
-<style scoped>
-
-/* 비즈니스 파트 */
+<style>
 .part {
     position: relative;
     display: block;
@@ -242,6 +220,4 @@ export default {
 .part-list li a:hover {
     background-color: rgba(243, 127, 37, 1.0);
 }
-
-
 </style>

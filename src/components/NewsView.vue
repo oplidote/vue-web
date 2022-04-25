@@ -1,60 +1,59 @@
 <template>
   <section class="news">
-            <div class="container">
-                <div class="news-board">
-                    <h3 class="news-title">공지사항</h3>
-                    <ul class="news-board-list">
-                        <li v-for="item in notice_arr" :key="item.id">
-                            <a :href="item.link">
-                                <span class="news-board-txt">{{ item.title }}</span>
-                                <span class="news-board-more"></span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+      <div class="container">
+        <div class="news-board">
+          <h3 class="news-title">공지사항</h3>
+          <ul class="news-board-list">
+              <li v-for="item in notice_arr" :key="item.id">
+                  <a :href="item.link">
+                      <span class="news-board-txt">{{ item.title }}</span>
+                      <span class="news-board-more"></span>
+                  </a>
+              </li>
+          </ul>
+        </div>
 
-                <div class="news-board">
-                    <h3 class="news-title">보도자료</h3>
-                    <ul class="news-board-list">
-                        <li v-for="item in news_arr" :key="item.id">
-                            <a :href="item.link">
-                                <span class="news-board-txt">{{ item.title }}</span>
-                                <span class="news-board-more"></span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
+        <div class="news-board">
+          <h3 class="news-title">보도자료</h3>
+          <ul class="news-board-list">
+            <li v-for="item in news_arr" :key="item.id">
+              <a :href="item.link">
+                <span class="news-board-txt">{{ item.title }}</span>
+                <span class="news-board-more"></span>
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </section>
 </template>
 
 <script>
-import {useStore} from 'vuex';
-import {ref} from 'vue';
+import { useStore } from 'vuex'
+import {ref} from 'vue'
 export default {
-    setup() {
-        // 공지사항 목록 배열
-        const notice_arr = ref([]);
-        // vuex 의 state 접근
-        const store = useStore();
-        // 필요로 한 데이터 가져오기
-        notice_arr.value = store.state.notice.notice;
-        // 보도자료 목록 배열
-        const news_arr = ref([]);
-        // 보도자료 목록 데이터 가져오기
-        news_arr.value = store.state.news.news;
-        return {
-            notice_arr,
-            news_arr
-        }
+  setup() {
+    // 공지사항 목록 배열
+    const notice_arr = ref([]);
+    // vuex 의 state 접근
+    const store = useStore();
+    // 필요로 한 데이터 가져오기
+    notice_arr.value = store.state.notice.notice;
+    // 보도자료 목록 배열
+    const news_arr = ref([]);
+    news_arr.value = store.state.news.news;
+    
+    
+    return{
+      notice_arr,
+      news_arr,
     }
+  }
 }
 </script>
 
-<style scoped>
-
-/* 새소식 */
+<style>
 .news {
     position: relative;
     display: block;
