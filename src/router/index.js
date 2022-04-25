@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeIndex from '@/pages/HomeIndex';
+import HomeIndex from '@/page/HomeIndex.vue'
+
 const router = createRouter({
     history: createWebHistory(),
     routes: [ 
@@ -11,32 +12,32 @@ const router = createRouter({
         {
             path: '/company',
             name: 'Company',
-            component: ''
+            component: HomeIndex
         }, 
         {
             path: '/business',
-            name: 'Business',
-            component: ''
+            name: 'Bussiness',
+            component: HomeIndex
         }, 
         {
-            path: '/contribution',
+            path: '/cb',
             name: 'Cb',
-            component: ''
+            component: HomeIndex
         }, 
         {
             path: '/ad',
             name: 'AD',
-            component: ''
+            component: HomeIndex
         }, 
         {
             path: '/cs',
             name: 'CS',
-            component: ''
+            component: HomeIndex
         }, 
         {
             path: '/job',
             name: 'Job',
-            component: ''
+            component: HomeIndex
         } 
     ]
 });

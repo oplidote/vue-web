@@ -1,22 +1,22 @@
 <template>
   <section class="customer">
-      <div class="container">
-        <a href="#">
-          <h3>FAQ</h3>
-          <p>
-            STX건설 고객님들을 위해 <br />
-            자주하시는 질문과 답변을 정리하였습니다.
-          </p>
-        </a>
-        <a href="#">
-          <h3>고객문의</h3>
-          <p>
-            STX건설 고객상담은 고객만족 <br />
-            서비스를 위하여 최선을 다하고 있습니다.
-          </p>
-        </a>
-      </div>
-    </section>
+            <div class="container">
+                <a href="#">
+                    <h3>FAQ</h3>
+                    <p>
+                        STX건설 고객님들을 위해 <br>
+                        자주하시는 질문과 답변을 정리하였습니다.
+                    </p>
+                </a>
+                <a href="#">
+                    <h3>고객문의</h3>
+                    <p>
+                        STX건설 고객상담은 고객만족 <br>
+                        서비스를 위하여 최선을 다하고 있습니다.
+                    </p>
+                </a>
+            </div>
+        </section>  
 </template>
 
 <script>
@@ -25,8 +25,10 @@ export default {
 }
 </script>
 
-<style>
-  .customer {
+<style scoped>
+
+/* 고객 서비스 */
+.customer {
     position: relative;
     display: block;
     background-color: #f8f8f8;
@@ -75,4 +77,6 @@ export default {
     position: relative;
     display: block;
 }
+
+
 </style>

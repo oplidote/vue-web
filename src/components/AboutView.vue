@@ -1,35 +1,38 @@
 <template>
-  <section class="about">
-      <div class="container">
-        <div class="about-top">
-          <h2>about us</h2>
-          <p>
-            <b>
-              고객의 믿음과 신뢰로 성장하는 <br />
-              STX건설이 되겠습니다.
-            </b>
-            <span>
-              STX건설 이름으로 세계 어디에서, 세계 누구와 겨뤄도<br />
-              자신 있는 세계 최고를 향해 웅비합니다. STX건설이라는 날개를<br />
-              하나 더 피고 세계로, 미래로 나아가는 STX건설의 힘찬 비상을
-              주목해<br />
-              주십시오.
-            </span>
-          </p>
-        </div>
-        <div class="about-bottom">
-          <a href="#">
-            <h3>경영이념</h3>
-          </a>
-          <a href="#">
-            <h3>공유가치</h3>
-          </a>
-          <a href="#">
-            <h3>중장기전략</h3>
-          </a>
-        </div>
-      </div>
-    </section>
+              
+        <section class="about">
+            <div class="container">
+                <div class="about-top">
+                    <h2>
+                        about us
+                    </h2>
+                    <p>
+                        <b>
+                            고객의 믿음과 신뢰로 성장하는 <br>
+                            STX건설이 되겠습니다.
+                        </b>
+                        <span>
+                            STX건설 이름으로 세계 어디에서, 세계 누구와 겨뤄도<br>
+                            자신 있는 세계 최고를 향해 웅비합니다. STX건설이라는 날개를<br>
+                            하나 더 피고 세계로, 미래로 나아가는 STX건설의 힘찬 비상을 주목해<br>
+                            주십시오.
+                        </span>
+                    </p>
+                </div>
+                <div class="about-bottom">
+
+                    <a href="#">
+                        <h3>경영이념</h3>
+                    </a>
+                    <a href="#">
+                        <h3>공유가치</h3>
+                    </a>
+                    <a href="#">
+                        <h3>중장기전략</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
 </template>
 
 <script>
@@ -38,8 +41,10 @@ export default {
 }
 </script>
 
-<style>
-  .about {
+<style scoped>
+
+/* 고객 서비스 */
+.about {
     position: relative;
     display: block;
 }
@@ -150,4 +155,5 @@ export default {
 
     margin-top: 130px;
 }
+
 </style>
