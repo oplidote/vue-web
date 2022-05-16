@@ -1,16 +1,11 @@
 <template>
     <div class="modal">
         <div class="cap"></div>
+        
         <div class="modal-wrap">
+            <img class="caution" src="@/images/megaphone.png" alt="">
             <b>이 사이트는 학습용으로 제작되었으며<br>리소스는 원저작자에게 있습니다.</b>
             ※ 본 사이트는 Chrome 에 최적화 되어있습니다.
-            <div class="modal-comment">
-                <a href="#" class="comment-bt">작업리뷰</a>
-                <div class="comment-box">
-                    <p>
-                    </p>
-                </div>
-            </div>
 
             <button @click="closeModal" class="modal-close"></button>
         </div>
@@ -45,7 +40,10 @@ export default {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 9999;
 }
-
+.caution {
+    margin-top: 20px;
+    width: 80px;
+}
 .modal-wrap {
     position: fixed;
     top: 50%;
